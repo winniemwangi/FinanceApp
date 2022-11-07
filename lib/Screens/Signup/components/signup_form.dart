@@ -5,7 +5,7 @@ import '../../../components/account.dart';
 import '../../../constants.dart';
 import '../../Login/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
+// import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
