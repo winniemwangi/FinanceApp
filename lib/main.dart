@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:financeapp/views/welcome_screen.dart';
 import 'package:financeapp/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
 
 void main() => runApp(const MyApp());
 

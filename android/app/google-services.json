@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "504517418002",
+    "project_id": "finance-app-f40ee",
+    "storage_bucket": "finance-app-f40ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504517418002:android:6c34ae2a6534d238de4ccb",
+        "android_client_info": {
+          "package_name": "com.winnie.financeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504517418002-16rl1hnh97f10jirbo0v3stdprlqnic0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2zCl7bWo4KyFL_ql7ajpp9f2cN5U6Cws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504517418002-16rl1hnh97f10jirbo0v3stdprlqnic0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
