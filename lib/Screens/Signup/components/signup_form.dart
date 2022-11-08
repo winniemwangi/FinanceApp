@@ -19,18 +19,25 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _firstname = TextEditingController();
+  final TextEditingController _lastname = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
+
+
 
   bool? _success;
   String? _userEmail;
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           TextFormField(
+            controller: _firstname,
             textInputAction: TextInputAction.next,
             cursorColor: kPrimaryColor,
             onSaved: (email) {},
@@ -45,6 +52,7 @@ class _SignUpFormState extends State<SignUpForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
+              controller: _lastname,
               textInputAction: TextInputAction.done,
               // obscureText: true,
               cursorColor: kPrimaryColor,
@@ -61,11 +69,13 @@ class _SignUpFormState extends State<SignUpForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
+              controller: _emailController,
               textInputAction: TextInputAction.done,
               keyboardType: TextInputType.emailAddress,
               // obscureText: true,
               cursorColor: kPrimaryColor,
               decoration: const InputDecoration(
+
                 hintText: "Email address",
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(defaultPadding),
@@ -111,6 +121,7 @@ class _SignUpFormState extends State<SignUpForm> {
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
               textInputAction: TextInputAction.done,
+              controller: _passwordController,
               obscureText: true,
               cursorColor: kPrimaryColor,
               decoration: const InputDecoration(
@@ -124,12 +135,25 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const SizedBox(height: defaultPadding / 2),
           ElevatedButton(
-            onPressed: () {_register();},
+            onPressed: () async {
+              if (_formKey.currentState!.validate()) {
+                _register();
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Processing')));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const LoginScreen();
+                    },
+                  ),
+                );
+              }
+            },
             child: Text("Sign Up".toUpperCase()),
           ),
+
           const SizedBox(height: defaultPadding),
           Account(
-            login: false,
             press: () {
               Navigator.push(
                 context,
