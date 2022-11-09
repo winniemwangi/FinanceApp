@@ -25,7 +25,7 @@ class _TransferPageState extends State<TransferPage> {
         children: [
           Container(
             padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
-            color: const Color(0XFF00B686),
+            color: const Color(0xFF6F35A5),
             child: Column(
               children: [
                 Row(
@@ -87,7 +87,7 @@ class _TransferPageState extends State<TransferPage> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey),
+                            color: Colors.purpleAccent),
                       ),
                       const SizedBox(
                         height: 15,
@@ -96,16 +96,16 @@ class _TransferPageState extends State<TransferPage> {
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: [
-                            buildRecentContact("Catherine",
-                                "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                            buildRecentContact("Allan",
-                                "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                            buildRecentContact("Kimberly",
-                                "https://images.pexels.com/photos/2748091/pexels-photo-2748091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                            buildRecentContact("Joanna",
-                                "https://images.pexels.com/photos/2764976/pexels-photo-2764976.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                            buildRecentContact("William",
-                                "https://images.pexels.com/photos/1458332/pexels-photo-1458332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+                            buildRecentContact("Mwihaki",
+                                "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
+                            buildRecentContact("Joy",
+                                "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
+                            buildRecentContact("Jeff",
+                                "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+                            buildRecentContact("Mitchell",
+                                "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
+                            buildRecentContact("Anita",
+                                "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
                           ],
                         ),
                       )
@@ -140,18 +140,16 @@ class _TransferPageState extends State<TransferPage> {
                         const SizedBox(
                           height: 10,
                         ),
-                        buildContactRow("Joanna Kingsman", "+236254122",
-                            "https://images.pexels.com/photos/2764976/pexels-photo-2764976.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                        buildContactRow("Gerald Robin", "+152354216",
-                            "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                        buildContactRow("Edwards", "+236254122",
-                            "https://images.pexels.com/photos/1458332/pexels-photo-1458332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                        buildContactRow("William Jacobson", "+236254122",
-                            "https://images.pexels.com/photos/2748091/pexels-photo-2748091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                        buildContactRow("Joanna Kingsman", "+236254122",
-                            "https://images.pexels.com/photos/2764976/pexels-photo-2764976.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-                        buildContactRow("Joanna Kingsman", "+236254122",
-                            "https://images.pexels.com/photos/2764976/pexels-photo-2764976.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+                        buildContactRow("Trina Mwaihaki", "+254 722798675",
+                            "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
+                        buildContactRow("Joy Wambui", "+254 734890647",
+                            "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
+                        buildContactRow("Jeff Wambua", "+254 789534171",
+                            "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+                        buildContactRow("Mitchell Achieng", "+254 765423157",
+                            "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
+                        buildContactRow("Anita Ali", "+254 726271263",
+                            "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
                       ],
                     ),
                   ),
@@ -224,13 +222,13 @@ class _TransferPageState extends State<TransferPage> {
             height: 45,
             width: 45,
             decoration: BoxDecoration(
-              color: Colors.greenAccent.withOpacity(0.2),
+              color: Colors.purpleAccent.withOpacity(0.2),
               borderRadius: BorderRadius.circular(10),
             ),
             child: const Icon(
               Icons.arrow_forward_ios,
               size: 20,
-              color: Colors.green,
+              color: Colors.purple,
             ),
           )
         ],
@@ -293,7 +291,7 @@ class _TransferPageState extends State<TransferPage> {
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: isActive ? const Color(0XFF00B686) : Colors.white,
+              color: isActive ? const Color(0xFF6F35A5) : Colors.white,
             ),
           )
         ],
@@ -313,7 +311,7 @@ class _TransferPageState extends State<TransferPage> {
         decoration: index == _selectedItemIndex
             ? BoxDecoration(
             border:
-            const Border(bottom: BorderSide(width: 4, color: Colors.green)),
+            const Border(bottom: BorderSide(width: 4, color: Colors.purpleAccent)),
             gradient: LinearGradient(colors: [
               Colors.green.withOpacity(0.3),
               Colors.green.withOpacity(0.016),
@@ -321,7 +319,7 @@ class _TransferPageState extends State<TransferPage> {
             : const BoxDecoration(),
         child: Icon(
           icon,
-          color: index == _selectedItemIndex ? const Color(0XFF00B868) : Colors.grey,
+          color: index == _selectedItemIndex ? const Color(0xFF6F35A5) : Colors.grey,
         ),
       ),
     );

@@ -41,6 +41,12 @@ class _SignUpFormState extends State<SignUpForm> {
             textInputAction: TextInputAction.next,
             cursorColor: kPrimaryColor,
             onSaved: (email) {},
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Enter firstname';
+              }
+              return null;
+            },
             decoration: const InputDecoration(
               hintText: "Firstname",
               prefixIcon: Padding(
@@ -56,6 +62,12 @@ class _SignUpFormState extends State<SignUpForm> {
               textInputAction: TextInputAction.done,
               // obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter lastname';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Lastname",
                 prefixIcon: Padding(
@@ -63,6 +75,8 @@ class _SignUpFormState extends State<SignUpForm> {
                   child: Icon(Icons.person),
                 ),
               ),
+
+
             ),
           ),
 
@@ -74,6 +88,12 @@ class _SignUpFormState extends State<SignUpForm> {
               keyboardType: TextInputType.emailAddress,
               // obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter Email address';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
 
                 hintText: "Email address",
@@ -91,6 +111,12 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: _phoneController,
               // obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter phonenumber';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Phone number",
                 prefixIcon: Padding(
@@ -108,6 +134,12 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: _passwordController,
               obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter password';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Password",
                 prefixIcon: Padding(
@@ -124,6 +156,12 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: _passwordController,
               obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter password';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Confirm password",
                 prefixIcon: Padding(

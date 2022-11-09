@@ -22,6 +22,12 @@ class LoginForm extends StatelessWidget {
               textInputAction: TextInputAction.done,
               // obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter email address';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Your email",
 
@@ -38,6 +44,12 @@ class LoginForm extends StatelessWidget {
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter password';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 hintText: "Your password",
                 prefixIcon: Padding(
@@ -51,12 +63,22 @@ class LoginForm extends StatelessWidget {
           Hero(
             tag: "login_btn",
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const HomePage();
+                    },
+                  ),
+                );
+              },
               child: Text(
                 "Login".toUpperCase(),
               ),
             ),
           ),
+
           const SizedBox(height: defaultPadding),
           Account(
             press: () {
@@ -64,7 +86,7 @@ class LoginForm extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const HomePage();
+                    return const SignUpScreen();
                   },
                 ),
               );

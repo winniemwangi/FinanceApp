@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 height: 300,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [Color(0XFF00B686), Color(0XFF00838F)]),
+                      colors: [Color(0xFF6F35A5), Color(0xFF6F35A5)]),
                 ),
                 child: Padding(
                   padding:
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.all(5),
                             child: const CircleAvatar(
                               backgroundImage: NetworkImage(
-                                  "https://images.pexels.com/photos/2167673/pexels-photo-2167673.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"),
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuryZT5Xx92qwd4e6e_dAObDz1dNdr3bZK8Q&usqp=CAU"),
                             ),
                           ),
                           const SizedBox(
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                "Christopher Summers",
+                                "Hello Taylor Sam",
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
@@ -113,16 +113,12 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   RichText(
                                     text: const TextSpan(
-                                        text: "\$5320",
+                                        text: "Ksh. 8000",
                                         style: TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.w600,
                                         ),
                                         children: [
-                                          TextSpan(
-                                              text: ".50",
-                                              style: TextStyle(
-                                                  color: Colors.white38))
                                         ]),
                                   )
                                 ],
@@ -155,12 +151,12 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          buildActivityButton(Icons.card_membership, "My Card",
+                          buildActivityButton(Icons.card_membership, "Card",
                               Colors.blue.withOpacity(0.2), const Color(0XFF01579B)),
                           buildActivityButton(
                               Icons.transfer_within_a_station,
                               "Transfer",
-                              Colors.cyanAccent.withOpacity(0.2),
+                              const Color(0xFF6F35A5).withOpacity(0.2),
                               const Color(0XFF0097A7)),
                           buildActivityButton(
                               Icons.pie_chart,
@@ -239,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           const Text(
-                            "\$2 170.90",
+                            "Ksh. 3000 ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0,
@@ -269,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           const Text(
-                            "\$1 450.10",
+                            "Ksh. 2050",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0,
@@ -283,7 +279,7 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   const Text(
-                    "You spent \$ 1,494 this month",
+                    "You spent Ksh. 2050 this month",
                     style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.italic,
@@ -341,7 +337,7 @@ class _HomePageState extends State<HomePage> {
         decoration: index == _selectedItemIndex
             ? BoxDecoration(
             border:
-            const Border(bottom: BorderSide(width: 4, color: Colors.green)),
+            const Border(bottom: BorderSide(width: 4, color: Colors.purpleAccent)),
             gradient: LinearGradient(colors: [
               Colors.green.withOpacity(0.3),
               Colors.green.withOpacity(0.016),
@@ -349,7 +345,7 @@ class _HomePageState extends State<HomePage> {
             : const BoxDecoration(),
         child: Icon(
           icon,
-          color: index == _selectedItemIndex ? const Color(0XFF00B868) : Colors.grey,
+          color: index == _selectedItemIndex ? const Color(0xFF6F35A5) : Colors.grey,
         ),
       ),
     );
@@ -373,7 +369,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Icon(
                     icon,
-                    color: Color(0xFF00B686),
+                    color: const Color(0xFF6F35A5),
                   ),
                   const SizedBox(
                     width: 10,
@@ -389,9 +385,9 @@ class _HomePageState extends State<HomePage> {
               ),
               Row(
                 children: [
-                  Text(
-                    "\$$amount",
-                    style:const TextStyle(
+                  const Text(
+                    "Ksh 550",
+                    style:TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -426,7 +422,7 @@ class _HomePageState extends State<HomePage> {
                 width: 80,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2),
-                    color: Color(0XFF00B686)),
+                    color: const Color(0xFF6F35A5)),
               ),
             ],
           )
@@ -436,10 +432,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   GestureDetector buildActivityButton(
-      IconData icon, String title, Color backgroundColor, Color iconColor) {
+      IconData icon,
+      String title,
+      Color backgroundColor,
+      Color iconColor) {
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(builder: (BuildContext context) => TransferPage())),
+          MaterialPageRoute(builder: (BuildContext context) => const TransferPage())),
       child: Container(
         margin: const EdgeInsets.all(10),
         height: 90,
