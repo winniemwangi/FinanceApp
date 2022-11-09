@@ -24,6 +24,7 @@ class LoginForm extends StatelessWidget {
               cursorColor: kPrimaryColor,
               decoration: const InputDecoration(
                 hintText: "Your email",
+
                 prefixIcon: Padding(
                   padding: EdgeInsets.all(defaultPadding),
                   child: Icon(Icons.lock),
