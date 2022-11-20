@@ -15,8 +15,8 @@ class _TransferPageState extends State<TransferPage> {
       bottomNavigationBar: Row(
         children: [
           buildNavBarItem(Icons.home, 0),
-          buildNavBarItem(Icons.card_giftcard, 1),
-          buildNavBarItem(Icons.camera, 2),
+          // buildNavBarItem(Icons.card_giftcard, 1),
+          // buildNavBarItem(Icons.camera, 2),
           buildNavBarItem(Icons.pie_chart, 3),
           buildNavBarItem(Icons.person, 4),
         ],

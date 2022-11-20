@@ -1,3 +1,4 @@
+import 'package:financeapp/Screens/profile_page.dart';
 import 'package:financeapp/Screens/transfer.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +16,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       bottomNavigationBar: Row(
         children: [
-          buildNavBarItem(Icons.home, 0),
-          buildNavBarItem(Icons.card_giftcard, 1),
-          buildNavBarItem(Icons.camera, 2),
-          buildNavBarItem(Icons.pie_chart, 3),
-          buildNavBarItem(Icons.person, 4),
+          buildNavBarItem(Icons.home, 0,(){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>ProfileScreen()));
+          }),
+          // buildNavBarItem(Icons.card_giftcard, 1),
+          // buildNavBarItem(Icons.camera, 2),
+          buildNavBarItem(Icons.pie_chart, 3, (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>TransferPage()));
+
+          }),
+          buildNavBarItem(Icons.person, 4, (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>ProfileScreen()));
+
+          }),
         ],
       ),
       body: Stack(
@@ -324,15 +333,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  GestureDetector buildNavBarItem(IconData icon, int index) {
+  GestureDetector buildNavBarItem(IconData icon, int index, VoidCallback action ) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedItemIndex = index;
-        });
-      },
+      onTap: action,
       child: Container(
-        width: MediaQuery.of(context).size.width / 5,
+        width: MediaQuery.of(context).size.width / 3,
         height: 60,
         decoration: index == _selectedItemIndex
             ? BoxDecoration(
@@ -437,8 +442,7 @@ class _HomePageState extends State<HomePage> {
       Color backgroundColor,
       Color iconColor) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(builder: (BuildContext context) => const TransferPage())),
+
       child: Container(
         margin: const EdgeInsets.all(10),
         height: 90,
