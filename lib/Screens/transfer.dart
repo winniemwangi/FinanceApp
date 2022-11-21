@@ -1,3 +1,5 @@
+import 'package:financeapp/Screens/home.dart';
+import 'package:financeapp/Screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class TransferPage extends StatefulWidget {
@@ -11,153 +13,162 @@ class _TransferPageState extends State<TransferPage> {
   int _selectedItemIndex = 2;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Row(
-        children: [
-          buildNavBarItem(Icons.home, 0),
-          // buildNavBarItem(Icons.card_giftcard, 1),
-          // buildNavBarItem(Icons.camera, 2),
-          buildNavBarItem(Icons.pie_chart, 3),
-          buildNavBarItem(Icons.person, 4),
-        ],
-      ),
-      body: Stack(
-        children: [
-          Container(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
-            color: const Color(0xFF6F35A5),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Icon(
-                      Icons.menu,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      "Transfer",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600,
+    return SafeArea(
+      child: Scaffold(
+        bottomNavigationBar: Row(
+          children: [
+            // buildNavBarItem(Icons.home, 0,(){
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) =>HomePage()));
+            // }),
+            buildNavBarItem(Icons.home, 0, (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>HomePage()));
+            }),
+            buildNavBarItem(Icons.pie_chart, 3, (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>TransferPage()));
+            }),
+            buildNavBarItem(Icons.person, 4,(){
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>ProfileScreen()));
+            }),
+          ],
+        ),
+        body: Stack(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
+              color: const Color(0xFF6F35A5),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Icon(
+                        Icons.menu,
                         color: Colors.white,
                       ),
-                    ),
-                    Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    buildExpenseBotton(Icons.phone, "Mobile", true),
-                    buildExpenseBotton(Icons.photo_camera, "Qr Code", false),
-                    buildExpenseBotton(Icons.card_membership, "Card", false),
-                    buildExpenseBotton(Icons.ev_station, "Utilities", false),
-                  ],
-                )
-              ],
-            ),
-          ),
-          Positioned(
-            top: 170,
-            height: MediaQuery.of(context).size.height - 230,
-            child: Column(
-              children: [
-                Container(
-                  height: 150,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
-                  decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40),
-                      )),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Recent",
+                      Text(
+                        "Transfer",
                         style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purpleAccent),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Expanded(
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            buildRecentContact("Mwihaki",
-                                "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
-                            buildRecentContact("Joy",
-                                "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
-                            buildRecentContact("Jeff",
-                                "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-                            buildRecentContact("Mitchell",
-                                "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
-                            buildRecentContact("Anita",
-                                "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
-                          ],
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
                         ),
+                      ),
+                      Icon(
+                        Icons.notifications,
+                        color: Colors.white,
                       )
                     ],
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buildExpenseBotton(Icons.phone, "Mobile", true),
+                      buildExpenseBotton(Icons.photo_camera, "Qr Code", false),
+                      buildExpenseBotton(Icons.card_membership, "Card", false),
+                      buildExpenseBotton(Icons.ev_station, "Utilities", false),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Positioned(
+              top: 170,
+              height: MediaQuery.of(context).size.height - 230,
+              child: Column(
+                children: [
+                  Container(
+                    height: 150,
                     width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(color: Colors.white),
-                    child: ListView(
+                    padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
+                    decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40),
+                        )),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "Contact",
+                          "Recent",
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.grey),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.search,
-                                  size: 30, color: Colors.grey),
-                              hintText: "Search",
-                              hintStyle: TextStyle(color: Colors.grey),
-                            ),
-                          ),
+                              color: Colors.purpleAccent),
                         ),
                         const SizedBox(
-                          height: 10,
+                          height: 15,
                         ),
-                        buildContactRow("Trina Mwaihaki", "+254 722798675",
-                            "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
-                        buildContactRow("Joy Wambui", "+254 734890647",
-                            "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
-                        buildContactRow("Jeff Wambua", "+254 789534171",
-                            "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
-                        buildContactRow("Mitchell Achieng", "+254 765423157",
-                            "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
-                        buildContactRow("Anita Ali", "+254 726271263",
-                            "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
+                        Expanded(
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              buildRecentContact("Mwihaki",
+                                  "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
+                              buildRecentContact("Joy",
+                                  "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
+                              buildRecentContact("Jeff",
+                                  "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+                              buildRecentContact("Mitchell",
+                                  "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
+                              buildRecentContact("Anita",
+                                  "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
-                )
-              ],
-            ),
-          )
-        ],
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: ListView(
+                        children: [
+                          const Text(
+                            "Contact",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                prefixIcon: Icon(Icons.search,
+                                    size: 30, color: Colors.grey),
+                                hintText: "Search",
+                                hintStyle: TextStyle(color: Colors.grey),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          buildContactRow("Trina Mwaihaki", "+254 722798675",
+                              "https://imageio.forbes.com/specials-images/imageserve/630bc7a29261003ebb1b5fd1/Zsanai-Epps--Director-of-My-Sister-s-Keeper/960x0.jpg?format=jpg&width=960"),
+                          buildContactRow("Joy Wambui", "+254 734890647",
+                              "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220317-Cynthia-Talla-ew-321p-4bc199.jpg"),
+                          buildContactRow("Jeff Wambua", "+254 789534171",
+                              "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+                          buildContactRow("Mitchell Achieng", "+254 765423157",
+                              "http://68.media.tumblr.com/c4bc990841324f73823e5c5d82710666/tumblr_otddprHCrg1vqr2b4o1_1280.jpg"),
+                          buildContactRow("Anita Ali", "+254 726271263",
+                              "http://78.media.tumblr.com/bdff863b89a773f3b680e0ce93ba964a/tumblr_p0tceelonS1qeg3q3o6_1280.jpg"),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -256,7 +267,7 @@ class _TransferPageState extends State<TransferPage> {
             ),
           ),
           const SizedBox(
-            height: 5,
+            height: 9,
           ),
           Text(
             name,
@@ -298,15 +309,11 @@ class _TransferPageState extends State<TransferPage> {
       ),
     );
   }
-  GestureDetector buildNavBarItem(IconData icon, int index) {
+  GestureDetector buildNavBarItem(IconData icon, int index, VoidCallback action) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedItemIndex = index;
-        });
-      },
+      onTap: action,
       child: Container(
-        width: MediaQuery.of(context).size.width / 5,
+        width: MediaQuery.of(context).size.width / 3,
         height: 60,
         decoration: index == _selectedItemIndex
             ? BoxDecoration(

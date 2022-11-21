@@ -29,19 +29,21 @@ class ProfileListItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(kSpacingUnit.w * 3),
-        color: Theme.of(context).backgroundColor,
+        color: const Color(0xFF6F35A5),
       ),
       child: Row(
         children: <Widget>[
           Icon(
             icon,
             size: kSpacingUnit.w * 2.5,
+            color: Color(0xFFF1E6FF),
           ),
           SizedBox(width: kSpacingUnit.w * 1.5),
           Text(
             text,
             style: kTitleTextStyle.copyWith(
               fontWeight: FontWeight.w500,
+              color: Color(0xFFF1E6FF)
             ),
           ),
           Spacer(),
@@ -49,6 +51,7 @@ class ProfileListItem extends StatelessWidget {
             Icon(
               LineAwesomeIcons.angle_right,
               size: kSpacingUnit.w * 2.5,
+              color: Color(0xFFF1E6FF),
             ),
         ],
       ),

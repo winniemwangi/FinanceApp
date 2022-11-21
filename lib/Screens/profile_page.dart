@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -41,8 +40,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Container(
                     height: kSpacingUnit.w * 2.5,
                     width: kSpacingUnit.w * 2.5,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).accentColor,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF6F35A5),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
@@ -50,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       widthFactor: kSpacingUnit.w * 1.5,
                       child:const Icon(
                         LineAwesomeIcons.pen,
-                        color: kDarkPrimaryColor,
+                        color: Colors.white,
                         // size: ScreenUtil().setSp(kSpacingUnit.w * 1.5),
                       ),
                     ),
@@ -61,60 +60,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           SizedBox(height: kSpacingUnit.w * 2),
           const Text(
-            'Nicolas Adams',
+            'Taylor Sam',
             style: kTitleTextStyle,
           ),
           SizedBox(height: kSpacingUnit.w * 0.5),
           const Text(
-            'nicolasadams@gmail.com',
+            'taylorsams@gmail.com',
             style: kCaptionTextStyle,
           ),
           SizedBox(height: kSpacingUnit.w * 2),
-          Container(
-            height: kSpacingUnit.w * 4,
-            width: kSpacingUnit.w * 20,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(kSpacingUnit.w * 3),
-              color: Theme.of(context).accentColor,
-            ),
-            child: const Center(
-              child: Text(
-                'Upgrade to PRO',
-                style: kButtonTextStyle,
-              ),
-            ),
-          ),
+
         ],
       ),
     );
 
-    // var themeSwitcher = ThemeSwitcher(
-    //   builder: (context) {
-    //     return AnimatedCrossFade(
-    //       duration: Duration(milliseconds: 200),
-    //       crossFadeState:
-    //       // ThemeProvider.of(context).brightness == Brightness.dark
-    //       //     ? CrossFadeState.showFirst
-    //       //     : CrossFadeState.showSecond,
-    //       firstChild: GestureDetector(
-    //         onTap: () =>
-    //             ThemeSwitcher.of(context).changeTheme(theme: kLightTheme),
-    //         child:const Icon(
-    //           LineAwesomeIcons.sun,
-    //           // size: ScreenUtil().setSp(kSpacingUnit.w * 3),
-    //         ),
-    //       ),
-    //       secondChild: GestureDetector(
-    //         onTap: () =>
-    //             ThemeSwitcher.of(context).changeTheme(theme: kDarkTheme),
-    //         child:const Icon(
-    //           LineAwesomeIcons.moon,
-    //           // size: ScreenUtil().setSp(kSpacingUnit.w * 3),
-    //         ),
-    //       ),
-    //     );
-    //   },
-    // );
+
 
     var header = Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               header,
               Expanded(
                 child: ListView(
-                  children: <Widget>[
+                  children: const <Widget>[
                     ProfileListItem(
                       icon: LineAwesomeIcons.user_shield,
                       text: 'Privacy',
