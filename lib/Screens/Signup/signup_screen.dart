@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:financeapp/constants.dart';
 import 'package:financeapp/responsive.dart';
 import '../../components/background.dart';
-import 'components/signup_image.dart';
 import 'components/signup_form.dart';
 
 
