@@ -20,8 +20,6 @@ class _HomePageState extends State<HomePage> {
             buildNavBarItem(Icons.home, 0,(){
               Navigator.push(context, MaterialPageRoute(builder: (context) =>HomePage()));
             }),
-            // buildNavBarItem(Icons.card_giftcard, 1),
-            // buildNavBarItem(Icons.camera, 2),
             buildNavBarItem(Icons.pie_chart, 3, (){
               Navigator.push(context, MaterialPageRoute(builder: (context) =>TransferPage()));
 
@@ -143,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
                     color: Colors.grey.shade100,
                     child: ListView(
                       padding: const EdgeInsets.only(top: 75),

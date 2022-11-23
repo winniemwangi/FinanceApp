@@ -22,6 +22,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height), minTextAdapt: true);
 
+
+
     var profileInfo = Expanded(
       child: Column(
         children: <Widget>[
